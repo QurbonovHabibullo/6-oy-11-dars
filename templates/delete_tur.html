@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Turni o'chirish</h1>
+  <p>Haqiqatan ham bu turdi yani: {{ tur.name }}ni, oʻchirib tashlamoqchimisiz? </p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">O'chirish</button>
+  </form>
+  <a href="{% url 'turlar_list' %}">Ortga qaytish</a>
+{% endblock %}
